@@ -1,0 +1,130 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #a0b3a8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #fffafa;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+:root {
+  --green-light: #c8e1cc;
+  --rose-soft: #F5E7E4;
+  --white-soft: #fffafa;
+  --green-olive: #a0b3a8;
+}
+
+body {
+  background-color: var(--white-soft);
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.cascading-right {
+  margin-right: -50px;
+  background: #F5E7E4;
+  border-radius: 12px;
+}
+
+@media (max-width: 991.98px) {
+  .cascading-right {
+    margin-right: 0;
+  }
+}
+/* App.css */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 1. Classe pour cacher la navbar par défaut */
+.navbar-hover {
+  position: fixed;
+  top: -60px; /* cache complètement ou partiellement */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: top 0.4s ease-in-out;
+}
+
+/* 2. Zone sensible au survol */
+.navbar-trigger-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  z-index: 999;
+}
+
+/* 3. Quand on survole la zone sensible, la navbar descend */
+.navbar-trigger-area:hover + .navbar-hover,
+.navbar-hover:hover {
+  top: 0;
+}
+
+.heading-3d {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--green-olive);
+    text-shadow:
+    2px 2px 0 #888,
+    3px 3px 1px rgba(0, 0, 0, 0.4),
+    4px 4px 2px rgba(0, 0, 0, 0.3),
+    5px 5px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.shadow-5 {
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25),
+    0 12px 24px rgba(0, 0, 0, 0.2),
+    0 16px 32px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 16px;
+}
+
+/* Dans votre fichier CSS global */
+@keyframes float {
+  0% { transform: translateY(0px) rotateY(0deg); }
+  50% { transform: translateY(-10px) rotateY(3deg); }
+  100% { transform: translateY(0px) rotateY(0deg); }
+}
+
+.card-3d {
+  animation: float 6s ease-in-out infinite;
+}
